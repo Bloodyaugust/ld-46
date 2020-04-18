@@ -1,6 +1,7 @@
 extends Control
 
 onready var _player_healthbar: ProgressBar = $"./PanelContainer/PlayerHealthbar"
+onready var _player_health_label: Label = $"./PanelContainer/CenterContainer/PlayerHealthLabel"
 
 var _player_health: int = 0
 
@@ -16,3 +17,4 @@ func _ready()->void:
 
 func _update_screen()->void:
   _player_healthbar.value = _player_health
+  _player_health_label.text = "{_player_health}/100".format({"_player_health": _player_health})
