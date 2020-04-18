@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/classes/Enemy.gd"
+}, {
 "base": "Node",
 "class": "LevelLoader",
 "language": "GDScript",
 "path": "res://scripts/classes/LevelLoader.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
 "LevelLoader": ""
 }
 
@@ -33,6 +39,14 @@ action_types="*res://lib/redux/action_types.gd"
 actions="*res://lib/redux/actions.gd"
 reducers="*res://lib/redux/reducers.gd"
 DataController="*res://scripts/controllers/DataController.gd"
+
+[input]
+
+game_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [rendering]
 

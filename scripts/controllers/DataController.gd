@@ -2,7 +2,7 @@ extends Node
 
 var data := {}
 
-func _load_actor_data(id: String, type: String):
+func _load_actor_data(id: String, type: String)->Dictionary:
   var file = File.new()
   file.open("res://data/{id}.{type}.json".format({"id": id, "type": type}), File.READ)
 
@@ -13,7 +13,7 @@ func _load_actor_data(id: String, type: String):
 
   return parsed_json.result
 
-func _ready():
+func _ready()->void:
   var _data_directory:Directory = Directory.new()
   var _actor_type_regex:RegEx = RegEx.new()
 
