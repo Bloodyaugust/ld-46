@@ -54,6 +54,11 @@ game_click={
  ]
 }
 
+[logging]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/ld-46.txt"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
