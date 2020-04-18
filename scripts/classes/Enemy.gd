@@ -5,6 +5,7 @@ export var id: String
 
 onready var _area2d = $"./Area2D"
 onready var _damage_tween: Tween = $"./DamageTween"
+onready var _health_bar: ProgressBar = $"./HealthBar"
 onready var _sprite = $"./Sprite"
 onready var _sprite_material = _sprite.material
 
@@ -17,6 +18,8 @@ var _value: int
 
 func damage(amount: int)->void:
   _current_health = _current_health - amount
+  _health_bar.value = _current_health
+  _health_bar.visible = true
   _damage_tween.interpolate_property(self, "_damage_shader_param", 1, 0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN)
   
   if !_damage_tween.is_active():
@@ -40,6 +43,9 @@ func _parse_data()->void:
   _health = _data["health"]
   _speed = _data["speed"]
   _value = _data["value"]
+
+  _health_bar.value = _health
+  _health_bar.max_value = _health
 
 func _process(delta)->void:
   if _current_health > 0:
