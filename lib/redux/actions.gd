@@ -17,13 +17,13 @@ func player_damage(amount):
     'type': types.PLAYER_DAMAGE,
     'damage': amount
   }
-  
-func player_set_food(food):
+
+func player_add_gold(gold):
   return {
-    'type': types.PLAYER_SET_FOOD,
-    'food': food
+    'type': types.PLAYER_ADD_GOLD,
+    'gold': gold
   }
-  
+
 func player_set_gold(gold):
   return {
     'type': types.PLAYER_SET_GOLD,
@@ -34,24 +34,4 @@ func player_set_health(health):
   return {
     'type': types.PLAYER_SET_HEALTH,
     'health': health
-  }
-  
-func player_set_state(state):
-  return {
-    'type': types.PLAYER_SET_STATE,
-    'state': state
-  }
-  
-func player_set_tile(tile):
-  emit_signal("player_tile_changed")
-  return {
-    'type': types.PLAYER_SET_TILE,
-    'tile': tile
-  }
-  
-func tiles_set_child(tile, child):
-  return {
-    'type': types.TILES_SET_CHILD,
-    'child': child,
-    'tile': tile
   }

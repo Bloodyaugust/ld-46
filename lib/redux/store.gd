@@ -2,12 +2,9 @@ extends Node
 
 var _state = {
   "player": {
-    "food": 100,
-    "gold": 100,
-    "health": 100,
-    "tile": Vector2(0, 0)
-   },
-  "tiles": {}
+    "gold": 0,
+    "health": 100
+   }
  }
 var _reducers = {}
 

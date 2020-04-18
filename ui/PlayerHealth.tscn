@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/themes/kenney/kenney.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/controllers/PlayerHealthController.gd" type="Script" id=2]
+
+[node name="PlayerHealth" type="CenterContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_right = 200.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 400.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 400, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHealthbar" type="ProgressBar" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 393.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+step = 1.0
+value = 50.0
