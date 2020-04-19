@@ -20,6 +20,7 @@ extents = Vector2( 30.5602, 31.4871 )
 [node name="Enemy" type="Node2D" groups=[
 "Enemy",
 ]]
+position = Vector2( 79.6913, 87.5242 )
 z_index = 1
 z_as_relative = false
 script = ExtResource( 2 )

@@ -1,5 +1,6 @@
 {
   "id": "snail",
+  "movement": "squish",
   "damage": 5,
   "health": 15,
   "size": [

@@ -2,6 +2,7 @@
   "id": "aphid",
   "damage": 1,
   "health": 5,
+  "movement": "basic",
   "size": [
     16,
     16

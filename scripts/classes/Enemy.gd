@@ -18,6 +18,7 @@ var _current_health: int
 var _damage: int
 var _damage_shader_param: float = 0
 var _health: int
+var _movement_type: String
 var _slow_amount: float
 var _slow_duration_left: float
 var _speed: float
@@ -48,6 +49,7 @@ func _parse_data()->void:
 #  Eat the data into a first party data structure
   _damage = _data["damage"]
   _health = _data["health"]
+  _movement_type = _data["movement"]
   _speed = _data["speed"]
   _value = _data["value"]
 
@@ -70,7 +72,15 @@ func _process(delta)->void:
       _slow_duration_left = 0
       _slow_amount = 0
 
-    position = position + (Vector2(_speed, 0) * delta) - (Vector2(_speed, 0) * delta * _slow_amount)
+    match _movement_type:
+      "squish":
+        var _sin_scalar: float = (sin(OS.get_system_time_msecs() / 200.0) + 1.0) / 2.0
+
+        position = position + (Vector2(_sin_scalar * _speed, 0) * delta) - (Vector2(_sin_scalar * _speed, 0) * delta * _slow_amount)
+        _sprite.scale.x = 0.75 + (_sin_scalar * 0.25)
+      _:
+        position = position + (Vector2(_speed, 0) * delta) - (Vector2(_speed, 0) * delta * _slow_amount)
+
     _sprite_material.set_shader_param("amount", _damage_shader_param)
     if _slow_duration_left > 0:
       _sprite_material.set_shader_param("slow_amount", _slow_duration_left / (SLOW_DURATION_BASE * store.state()["player"]["upgrades"].get("click-slow", 0)))
