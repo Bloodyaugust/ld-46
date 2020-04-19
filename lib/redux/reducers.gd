@@ -28,7 +28,8 @@ func player(state, action):
   if action['type'] == action_types.PLAYER_ADD_GOLD:
     var next_state = store.shallow_copy(state)
     next_state['gold'] = next_state['gold'] + action['gold']
-    next_state['gold_earned'] = next_state['gold_earned'] + action['gold']
+    if action['gold'] > 0:
+      next_state['gold_earned'] = next_state['gold_earned'] + action['gold']
     return next_state
   if action['type'] == action_types.PLAYER_ADD_UPGRADE:
     var next_state = store.shallow_copy(state)

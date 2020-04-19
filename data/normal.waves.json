@@ -1,47 +1,84 @@
 [
   [
     {
-      "count": 1,
-      "delay": 0,
+      "count": 7,
+      "delay": 2.5,
       "id": "aphid",
-      "interval": 0,
+      "interval": 2.5,
       "location": "top"
     },
     {
-      "count": 1,
+      "count": 7,
       "delay": 0,
       "id": "aphid",
-      "interval": 0,
+      "interval": 1.5,
       "location": "middle"
     },
     {
-      "count": 1,
-      "delay": 0,
+      "count": 3,
+      "delay": 0.5,
       "id": "aphid",
-      "interval": 0,
+      "interval": 5,
       "location": "bottom"
     }
   ],
   [
     {
-      "count": 1,
-      "delay": 0,
+      "count": 14,
+      "delay": 1.25,
       "id": "aphid",
-      "interval": 0,
+      "interval": 1,
       "location": "top"
     },
     {
-      "count": 1,
+      "count": 10,
       "delay": 0,
       "id": "aphid",
-      "interval": 0,
+      "interval": 1.5,
       "location": "middle"
     },
     {
-      "count": 1,
+      "count": 5,
+      "delay": 1.5,
+      "id": "aphid",
+      "interval": 3,
+      "location": "middle"
+    },
+    {
+      "count": 6,
+      "delay": 0.5,
+      "id": "aphid",
+      "interval": 4,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 7,
+      "delay": 2,
+      "id": "aphid",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 10,
       "delay": 0,
       "id": "aphid",
-      "interval": 0,
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 5,
+      "delay": 2.5,
+      "id": "big-aphid",
+      "interval": 3,
+      "location": "middle"
+    },
+    {
+      "count": 5,
+      "delay": 0.5,
+      "id": "big-aphid",
+      "interval": 4,
       "location": "bottom"
     }
   ]

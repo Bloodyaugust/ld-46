@@ -11,6 +11,7 @@ onready var _floating_text: PackedScene = preload("res://doodads/floating_text.t
 onready var _health_bar: ProgressBar = $"./HealthBar"
 onready var _sprite = $"./Sprite"
 onready var _sprite_material = _sprite.material
+onready var _tree := get_tree()
 
 var _current_health: int
 var _damage: int
@@ -85,7 +86,7 @@ func _process(delta)->void:
     _new_floating_text.time_to_live = 1
     _new_floating_text.float_speed = 100
 
-    get_tree().get_root().add_child(_new_floating_text)
+    _tree.get_root().add_child(_new_floating_text)
 
     queue_free()
 

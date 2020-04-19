@@ -56,7 +56,7 @@ func _spawn()->void:
   var _new_enemy = _enemy_actor.instance()
 
   _new_enemy.id = _enemy_id
-  _new_enemy.global_position = global_position
+  _new_enemy.global_position = global_position + Vector2(0, rand_range(-50, 50))
 
   _root.add_child(_new_enemy)
 

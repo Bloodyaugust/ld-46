@@ -1,0 +1,7 @@
+{
+  "id": "big-aphid",
+  "damage": 5,
+  "health": 15,
+  "speed": 50,
+  "value": 2
+}
