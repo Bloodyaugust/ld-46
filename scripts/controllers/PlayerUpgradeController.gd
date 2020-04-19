@@ -65,6 +65,7 @@ func _update_screen()->void:
     var _upgrade_button = _upgrade_element.get_node("Button")
     var _upgrade_cost = _upgrade_element.get_node("Cost")
     var _upgrade_cost_icon = _upgrade_element.get_node("TextureRect")
+    var _upgrade_requirement_satisfied = true if !_upgrade.has("requires") else store.state()["player"]["upgrades"].get(_upgrade.requires, false)
     var _player_current_upgrade_value = store.state()["player"]["upgrades"].get(_upgrade.id, 0)
 
     var _upgrade_cost_scaled = _upgrade.cost + (_upgrade.cost_scalar * (_player_current_upgrade_value / _upgrade.value))
@@ -86,3 +87,5 @@ func _update_screen()->void:
           _upgrade_button.text = "{label} ({value})".format({"label": _upgrade.label, "value": str(_player_current_upgrade_value)})
         else:
           _upgrade_button.text = _upgrade.label
+
+      _upgrade_element.visible = _upgrade_requirement_satisfied

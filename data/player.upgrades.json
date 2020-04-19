@@ -24,6 +24,7 @@
     "label": "Click Radius",
     "description": "Increases radius of click",
     "levels": 3,
+    "requires": "click-piercing",
     "value": 20
   },
   {
