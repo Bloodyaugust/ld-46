@@ -10,7 +10,7 @@ var _player_piercing:bool = false
 var _player_damage_circles: Array = []
 
 func _create_player_damage_circles()->void:
-  for _i in range(10):
+  for _i in range(20):
     _player_damage_circles.append(_player_damage_circle.instance())
     _root.add_child(_player_damage_circles[_i])
 

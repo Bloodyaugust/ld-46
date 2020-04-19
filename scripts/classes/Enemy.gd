@@ -98,5 +98,4 @@ func _ready()->void:
 
   _current_health = _health
 
-  _area2d.connect("input_event", self, "_on_input_event")
   _area2d.connect("area_entered", self, "_on_area_entered")

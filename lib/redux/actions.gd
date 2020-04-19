@@ -23,7 +23,6 @@ func game_set_start_time(time):
   }
 
 func player_damage(amount):
-  emit_signal("player_damaged")
   return {
     'type': types.PLAYER_DAMAGE,
     'damage': amount
