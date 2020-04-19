@@ -1,17 +1,25 @@
 [
   {
     "id": "click-damage",
-    "cost": 3,
+    "cost": 15,
     "label": "Click Damage",
     "description": "Increases damage per click",
-    "levels": 2,
+    "levels": 5,
     "value": 1
   },
   {
     "id": "click-slow",
     "cost": 25,
     "label": "Click Slow",
-    "description": "Slows enemies clicked",
+    "description": "Slows bugs when clicked",
+    "levels": 3,
+    "value": 1
+  },
+  {
+    "id": "enemy-kill-bonus-gold",
+    "cost": 50,
+    "label": "Bonus Gold",
+    "description": "Get more gold from killing bugs",
     "levels": 3,
     "value": 1
   }
