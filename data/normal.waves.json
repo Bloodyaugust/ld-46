@@ -24,22 +24,22 @@
   ],
   [
     {
-      "count": 14,
+      "count": 7,
       "delay": 1.25,
       "id": "aphid",
-      "interval": 1,
+      "interval": 1.5,
       "location": "top"
     },
     {
-      "count": 10,
+      "count": 8,
       "delay": 0,
       "id": "aphid",
-      "interval": 1.5,
+      "interval": 2.5,
       "location": "middle"
     },
     {
       "count": 5,
-      "delay": 1.5,
+      "delay": 2.5,
       "id": "aphid",
       "interval": 3,
       "location": "middle"
@@ -76,9 +76,23 @@
     },
     {
       "count": 5,
+      "delay": 12,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 5,
       "delay": 0.5,
       "id": "big-aphid",
       "interval": 4,
+      "location": "bottom"
+    },
+    {
+      "count": 5,
+      "delay": 15,
+      "id": "aphid",
+      "interval": 1.5,
       "location": "bottom"
     }
   ]
