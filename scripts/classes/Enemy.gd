@@ -6,6 +6,7 @@ const SLOW_DURATION_BASE: float = 1.0
 export var id: String
 
 onready var _area2d = $"./Area2D"
+onready var _collision_shape = $"./Area2D/CollisionShape2D"
 onready var _damage_tween: Tween = $"./DamageTween"
 onready var _floating_text: PackedScene = preload("res://doodads/floating_text.tscn")
 onready var _health_bar: ProgressBar = $"./HealthBar"
@@ -52,6 +53,11 @@ func _parse_data()->void:
   _health = _data["health"]
   _speed = _data["speed"]
   _value = _data["value"]
+
+  _sprite.texture = load("res://sprites/enemies/{id}.png".format({"id": id}))
+  _collision_shape.shape.extents = Vector2(_data["size"][0], _data["size"][1])
+  _health_bar.rect_size = Vector2(_data["size"][0] * 2, 7)
+  _health_bar.rect_position = Vector2(-_data["size"][0], -_data["size"][1] - 14)
 
   _health_bar.value = _health
   _health_bar.max_value = _health

@@ -10,7 +10,7 @@
   },
   {
     "id": "click-slow",
-    "cost": 80,
+    "cost": 70,
     "cost_scalar": 25,
     "label": "Click Slow",
     "description": "Slows bugs when clicked",

@@ -2,6 +2,10 @@
   "id": "big-aphid",
   "damage": 5,
   "health": 15,
+  "size": [
+    32,
+    24
+  ],
   "speed": 50,
   "value": 2
 }
