@@ -15,7 +15,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 256, -0.25, 0, 0.17, -66.6293, 50, -0.25, 0, 0.33, 13.3707, 70, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 256, -0.25, 0, 0.17, -66.6293, 35, -0.25, 0, 0.33, 13.3707, 70, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.15, 0.5 )
 }
 tracks/1/type = "bezier"
@@ -25,7 +25,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -150, -0.25, 0, 0.17, 45.0373, -50, -0.25, 0, 0.11, -8.41077, -70, -0.21, 1.29051, 0.25, 0 ),
+"points": PoolRealArray( -150, -0.25, 0, 0.17, 45.0373, -30, -0.25, 0, 0.11, -8.41077, -70, -0.21, 1.29051, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.15, 0.5 )
 }
 tracks/2/type = "method"
@@ -52,7 +52,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -45.0 ]
+"values": [ 135.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -75,7 +75,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -400, -0.25, 0, 0.25, 0, -128, -0.25, 0, 0.25, 0, -158, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( -400, -0.25, 0, 0.25, 0, -100, -0.25, 0, 0.25, 0, -158, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.15, 0.5 )
 }
 tracks/2/type = "method"
@@ -107,6 +107,8 @@ tracks/3/keys = {
 
 [node name="player_damage_circle" type="Area2D"]
 position = Vector2( 196.078, 286.957 )
+z_index = 2
+z_as_relative = false
 collision_mask = 2
 script = ExtResource( 1 )
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/big-aphid.png-31bfa91481dd07ba62fbd1cbcea1ead6.stex"
+path="res://.import/insecticide.png-bb6439ef628384479f2160ba6c99cd93.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/big-aphid.png"
-dest_files=[ "res://.import/big-aphid.png-31bfa91481dd07ba62fbd1cbcea1ead6.stex" ]
+source_file="res://sprites/attacks/insecticide.png"
+dest_files=[ "res://.import/insecticide.png-bb6439ef628384479f2160ba6c99cd93.stex" ]
 
 [params]
 

@@ -20,8 +20,10 @@ extents = Vector2( 30.5602, 31.4871 )
 [node name="Enemy" type="Node2D" groups=[
 "Enemy",
 ]]
+z_index = 1
+z_as_relative = false
 script = ExtResource( 2 )
-id = "aphid"
+id = "snail"
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )

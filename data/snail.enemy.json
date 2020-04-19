@@ -1,10 +1,10 @@
 {
-  "id": "big-aphid",
+  "id": "snail",
   "damage": 5,
   "health": 15,
   "size": [
     32,
-    24
+    32
   ],
   "speed": 50,
   "value": 3
