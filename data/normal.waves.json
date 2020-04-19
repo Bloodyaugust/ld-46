@@ -2,23 +2,23 @@
   [
     {
       "count": 3,
-      "delay": 1.5,
+      "delay": 0,
       "id": "aphid",
-      "interval": 7,
+      "interval": 1,
       "location": "top"
     },
     {
       "count": 5,
       "delay": 0,
       "id": "aphid",
-      "interval": 5,
+      "interval": 1,
       "location": "middle"
     },
     {
       "count": 3,
-      "delay": 4,
+      "delay": 0,
       "id": "aphid",
-      "interval": 7,
+      "interval": 1,
       "location": "bottom"
     }
   ],

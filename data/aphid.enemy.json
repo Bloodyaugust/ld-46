@@ -2,6 +2,6 @@
   "id": "aphid",
   "damage": 1,
   "health": 5,
-  "speed": 25,
+  "speed": 100,
   "value": 1
 }

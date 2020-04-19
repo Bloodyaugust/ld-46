@@ -32,10 +32,3 @@ margin_right = 218.638
 margin_bottom = 42.7363
 hint_tooltip = "Increases damage per click"
 text = "Click Damage"
-
-[node name="Current" type="Label" parent="."]
-margin_left = 223.0
-margin_top = 9.0
-margin_right = 247.0
-margin_bottom = 33.0
-text = "(0)"

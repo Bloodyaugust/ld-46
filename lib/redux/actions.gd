@@ -24,6 +24,18 @@ func player_add_gold(gold):
     'gold': gold
   }
 
+func player_add_upgrade(id, amount):
+  return {
+    'type': types.PLAYER_ADD_UPGRADE,
+    'id': id,
+    'amount': amount
+  }
+
+func player_reset_upgrades():
+  return {
+    'type': types.PLAYER_RESET_UPGRADES
+  }
+
 func player_set_gold(gold):
   return {
     'type': types.PLAYER_SET_GOLD,

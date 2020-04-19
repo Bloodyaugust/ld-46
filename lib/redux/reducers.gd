@@ -19,6 +19,15 @@ func player(state, action):
     var next_state = store.shallow_copy(state)
     next_state['gold'] = next_state['gold'] + action['gold']
     return next_state
+  if action['type'] == action_types.PLAYER_ADD_UPGRADE:
+    var next_state = store.shallow_copy(state)
+    var _new_upgrade_value = next_state['upgrades'].get(action['id'], 0) + action['amount']
+    next_state['upgrades'][action['id']] = _new_upgrade_value
+    return next_state
+  if action['type'] == action_types.PLAYER_RESET_UPGRADES:
+    var next_state = store.shallow_copy(state)
+    next_state['upgrades'] = {}
+    return next_state
   if action['type'] == action_types.PLAYER_SET_GOLD:
     var next_state = store.shallow_copy(state)
     next_state['gold'] = action['gold']

@@ -21,7 +21,9 @@ func _on_store_changed(name, state)->void:
 func _on_spawn_controller_wave_complete()->void:
   _show()
 
-func _on_upgrade_button_pressed(id)->void:
+func _on_upgrade_button_pressed(id, value, cost)->void:
+  store.dispatch(actions.player_add_upgrade(id, value))
+  store.dispatch(actions.player_add_gold(-cost))
   print("Upgrade pressed for: " + id)
 
 func _populate()->void:
@@ -32,10 +34,9 @@ func _populate()->void:
     _new_upgrade.name = _upgrade.id
     _new_upgrade.get_node("Button").text = _upgrade.label
     _new_upgrade.get_node("Cost").text = str(_upgrade.cost)
-    _new_upgrade.get_node("Current").text = str(0)
     _new_upgrade_button.hint_tooltip = _upgrade.description
 
-    _new_upgrade_button.connect("pressed", self, "_on_upgrade_button_pressed", [_upgrade.id])
+    _new_upgrade_button.connect("pressed", self, "_on_upgrade_button_pressed", [_upgrade.id, _upgrade.value, _upgrade.cost])
 
     _upgrade_container.add_child(_new_upgrade)
 
@@ -62,9 +63,23 @@ func _update_screen()->void:
   for _upgrade in _player_upgrades:
     var _upgrade_element = _upgrade_container.get_node(_upgrade.id)
     var _upgrade_button = _upgrade_element.get_node("Button")
+    var _upgrade_cost = _upgrade_element.get_node("Cost")
+    var _upgrade_cost_icon = _upgrade_element.get_node("TextureRect")
+    var _player_current_upgrade_value = store.state()["player"]["upgrades"].get(_upgrade.id, 0)
 
     if _upgrade_element:
       if _player_gold < _upgrade.cost:
         _upgrade_button.disabled = true
       else:
         _upgrade_button.disabled = false
+
+      if _player_current_upgrade_value >= _upgrade.levels:
+        _upgrade_button.disabled = true
+        _upgrade_button.text = "{label} (MAX)".format({"label": _upgrade.label})
+        _upgrade_cost.text = ""
+        _upgrade_cost_icon.visible = false
+      else:
+        if _player_current_upgrade_value > 0:
+          _upgrade_button.text = "{label} ({value})".format({"label": _upgrade.label, "value": str(_player_current_upgrade_value)})
+        else:
+          _upgrade_button.text = _upgrade.label

@@ -3,7 +3,8 @@ extends Node
 var _state = {
   "player": {
     "gold": 0,
-    "health": 100
+    "health": 100,
+    "upgrades": {}
    }
  }
 var _reducers = {}

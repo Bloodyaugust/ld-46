@@ -34,7 +34,7 @@ func _on_area_entered(_area)->void:
 
 func _on_input_event(_viewport, event: InputEvent, _shape_index)->void:
   if event.is_action("game_click") && event.is_action_pressed("game_click"):
-    damage(1)
+    damage(1 + store.state()["player"]["upgrades"].get("click-damage", 0))
 
 func _parse_data()->void:
   var _data: Dictionary = DataController.data["enemy"][id]
