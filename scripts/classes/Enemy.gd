@@ -32,19 +32,16 @@ func damage(amount: int)->void:
   if !_damage_tween.is_active():
     _damage_tween.start()
 
+func slow(amount: int)->void:
+  _slow_duration_left = SLOW_DURATION_BASE * amount
+
 func get_class()->String:
   return "Enemy"
 
-func _on_area_entered(_area)->void:
-  store.dispatch(actions.player_damage(_damage))
-  queue_free()
-
-func _on_input_event(_viewport, event: InputEvent, _shape_index)->void:
-  if event.is_action("game_click") && event.is_action_pressed("game_click"):
-    damage(1 + store.state()["player"]["upgrades"].get("click-damage", 0))
-
-    if store.state()["player"]["upgrades"].get("click-slow", 0) > 0:
-      _slow_duration_left = SLOW_DURATION_BASE * store.state()["player"]["upgrades"].get("click-slow", 0)
+func _on_area_entered(area)->void:
+  if area.is_in_group("Plant"):
+    store.dispatch(actions.player_damage(_damage))
+    queue_free()
 
 func _parse_data()->void:
   var _data: Dictionary = DataController.data["enemy"][id]

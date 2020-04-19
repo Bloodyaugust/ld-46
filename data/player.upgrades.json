@@ -9,6 +9,24 @@
     "value": 1
   },
   {
+    "id": "click-piercing",
+    "cost": 25,
+    "cost_scalar": 1,
+    "label": "Click Piercing",
+    "description": "Clicks damage enemies in a small radius",
+    "levels": 1,
+    "value": 1
+  },
+  {
+    "id": "click-radius",
+    "cost": 40,
+    "cost_scalar": 2,
+    "label": "Click Radius",
+    "description": "Increases radius of click",
+    "levels": 3,
+    "value": 20
+  },
+  {
     "id": "click-slow",
     "cost": 60,
     "cost_scalar": 25,

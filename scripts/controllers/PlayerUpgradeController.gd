@@ -22,7 +22,7 @@ func _on_spawn_controller_wave_complete()->void:
   _show()
 
 func _on_upgrade_button_pressed(id, value, cost, cost_scalar)->void:
-  store.dispatch(actions.player_add_gold(-(cost + (cost_scalar * store.state()["player"]["upgrades"].get(id, 0)))))
+  store.dispatch(actions.player_add_gold(-(cost + (cost_scalar * (store.state()["player"]["upgrades"].get(id, 0) / value)))))
   store.dispatch(actions.player_add_upgrade(id, value))
   print("Upgrade pressed for: " + id)
 
@@ -67,7 +67,7 @@ func _update_screen()->void:
     var _upgrade_cost_icon = _upgrade_element.get_node("TextureRect")
     var _player_current_upgrade_value = store.state()["player"]["upgrades"].get(_upgrade.id, 0)
 
-    var _upgrade_cost_scaled = _upgrade.cost + (_upgrade.cost_scalar * _player_current_upgrade_value)
+    var _upgrade_cost_scaled = _upgrade.cost + (_upgrade.cost_scalar * (_player_current_upgrade_value / _upgrade.value))
 
     if _upgrade_element:
       if _player_gold < _upgrade_cost_scaled:
@@ -75,7 +75,7 @@ func _update_screen()->void:
       else:
         _upgrade_button.disabled = false
 
-      if _player_current_upgrade_value >= _upgrade.levels:
+      if _player_current_upgrade_value >= _upgrade.levels * _upgrade.value:
         _upgrade_button.disabled = true
         _upgrade_button.text = "{label} (MAX)".format({"label": _upgrade.label})
         _upgrade_cost.text = ""

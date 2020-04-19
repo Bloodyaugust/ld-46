@@ -41,6 +41,7 @@ margin_left = -30.0
 margin_top = -45.0
 margin_right = 30.0
 margin_bottom = -38.0
+mouse_filter = 2
 theme = ExtResource( 4 )
 step = 1.0
 percent_visible = false
