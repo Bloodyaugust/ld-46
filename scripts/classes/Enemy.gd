@@ -78,6 +78,8 @@ func _process(delta)->void:
     var _gold_added = _value + store.state()["player"]["upgrades"].get("enemy-kill-bonus-gold", 0)
 
     store.dispatch(actions.player_add_gold(_gold_added))
+    store.dispatch(actions.game_add_enemies_killed(1))
+
     _new_floating_text.get_node("Label").text = str(_gold_added)
     _new_floating_text.global_position = global_position - Vector2(0, 10)
     _new_floating_text.time_to_live = 1

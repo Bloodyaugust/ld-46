@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://lib/redux/main.gd" type="Script" id=1]
 [ext_resource path="res://ui/PlayerHealth.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/PlayerGold.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actors/Plant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/PlayerUpgrades.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/GameOver.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,6 +17,8 @@ script = ExtResource( 1 )
 [node name="PlayerGold" parent="CanvasLayer" instance=ExtResource( 3 )]
 
 [node name="PlayerUpgrades" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="Plant" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896.924, 297.419 )

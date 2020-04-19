@@ -1,47 +1,47 @@
 [
   [
     {
-      "count": 3,
+      "count": 1,
       "delay": 0,
       "id": "aphid",
-      "interval": 1,
+      "interval": 0,
       "location": "top"
     },
     {
-      "count": 5,
+      "count": 1,
       "delay": 0,
       "id": "aphid",
-      "interval": 1,
+      "interval": 0,
       "location": "middle"
     },
     {
-      "count": 3,
+      "count": 1,
       "delay": 0,
       "id": "aphid",
-      "interval": 1,
+      "interval": 0,
       "location": "bottom"
     }
   ],
   [
     {
-      "count": 3,
-      "delay": 1.5,
+      "count": 1,
+      "delay": 0,
       "id": "aphid",
-      "interval": 7,
+      "interval": 0,
       "location": "top"
     },
     {
-      "count": 5,
+      "count": 1,
       "delay": 0,
       "id": "aphid",
-      "interval": 5,
+      "interval": 0,
       "location": "middle"
     },
     {
-      "count": 3,
-      "delay": 4,
+      "count": 1,
+      "delay": 0,
       "id": "aphid",
-      "interval": 7,
+      "interval": 0,
       "location": "bottom"
     }
   ]

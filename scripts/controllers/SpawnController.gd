@@ -11,6 +11,10 @@ var _spawners_remaining: int = 0
 var _spawn_points: Dictionary = {}
 var _waiting_for_next_wave: bool = false
 
+func _on_game_restart()->void:
+  _current_wave = 0
+  _spawn_wave()
+
 func _on_spawner_spawning_completed()->void:
   print("Spawner finished")
   _spawners_remaining -= 1
@@ -27,7 +31,11 @@ func _process(delta)->void:
       _current_wave += 1
       _waiting_for_next_wave = false
       print("Wave complete")
-      emit_signal("spawn_controller_wave_complete")
+
+      if _current_wave == DataController.data["waves"]["normal"].size() || store.state()["player"]["health"] <= 0:
+        actions.emit_signal("game_complete")
+      else:
+        emit_signal("spawn_controller_wave_complete")
 
 func _ready()->void:
   _spawn_points["top"] = Vector2(-100, 150)
@@ -35,6 +43,7 @@ func _ready()->void:
   _spawn_points["bottom"] = Vector2(-100, 450)
 
   connect("spawn_controller_spawn_wave", self, "_spawn_wave")
+  actions.connect("game_restart", self, "_on_game_restart")
 
   call_deferred("_spawn_wave")
 

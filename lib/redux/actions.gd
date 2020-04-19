@@ -2,8 +2,19 @@ extends Node
 
 onready var types = get_node('/root/action_types')
 
-signal player_damaged
-signal player_tile_changed
+signal game_complete
+signal game_restart
+
+func game_add_enemies_killed(amount):
+  return {
+    'type': types.GAME_ADD_ENEMIES_KILLED,
+    'amount': amount
+  }
+
+func game_reset():
+  return {
+    'type': types.GAME_RESET
+  }
 
 func game_set_start_time(time):
   return {
@@ -31,9 +42,9 @@ func player_add_upgrade(id, amount):
     'amount': amount
   }
 
-func player_reset_upgrades():
+func player_reset():
   return {
-    'type': types.PLAYER_RESET_UPGRADES
+    'type': types.PLAYER_RESET
   }
 
 func player_set_gold(gold):

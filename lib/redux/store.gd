@@ -1,8 +1,12 @@
 extends Node
 
 var _state = {
+  "game": {
+    "enemies_killed": 0
+  },
   "player": {
     "gold": 0,
+    "gold_earned": 0,
     "health": 100,
     "upgrades": {}
    }
