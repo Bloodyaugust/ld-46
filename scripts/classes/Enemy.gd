@@ -10,6 +10,7 @@ onready var _collision_shape = $"./Area2D/CollisionShape2D"
 onready var _damage_tween: Tween = $"./DamageTween"
 onready var _floating_text: PackedScene = preload("res://doodads/floating_text.tscn")
 onready var _health_bar: ProgressBar = $"./HealthBar"
+onready var _random_offset: float = rand_range(0, 5000)
 onready var _sprite = $"./Sprite"
 onready var _sprite_material = _sprite.material
 onready var _tree := get_tree()
@@ -74,7 +75,7 @@ func _process(delta)->void:
 
     match _movement_type:
       "squish":
-        var _sin_scalar: float = (sin(OS.get_system_time_msecs() / 200.0) + 1.0) / 2.0
+        var _sin_scalar: float = (sin((OS.get_system_time_msecs() + _random_offset) / 200.0) + 1.0) / 2.0
 
         position = position + (Vector2(_sin_scalar * _speed, 0) * delta) - (Vector2(_sin_scalar * _speed, 0) * delta * _slow_amount)
         _sprite.scale.x = 0.75 + (_sin_scalar * 0.25)
