@@ -21,5 +21,28 @@
       "interval": 7,
       "location": "bottom"
     }
+  ],
+  [
+    {
+      "count": 3,
+      "delay": 1.5,
+      "id": "aphid",
+      "interval": 7,
+      "location": "top"
+    },
+    {
+      "count": 5,
+      "delay": 0,
+      "id": "aphid",
+      "interval": 5,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 4,
+      "id": "aphid",
+      "interval": 7,
+      "location": "bottom"
+    }
   ]
 ]

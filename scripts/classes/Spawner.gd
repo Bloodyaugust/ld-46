@@ -1,6 +1,8 @@
 extends Node2D
 class_name Spawner
 
+signal spawner_spawning_completed
+
 export var configuration: Dictionary
 
 onready var _enemy_actor: PackedScene = preload("res://actors/Enemy.tscn")
@@ -38,6 +40,7 @@ func _process(delta)->void:
         _spawn()
 
         if _spawns_left == 0:
+          emit_signal("spawner_spawning_completed")
           queue_free()
 
   else:

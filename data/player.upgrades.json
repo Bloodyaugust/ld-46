@@ -1,0 +1,18 @@
+[
+  {
+    "id": "click-damage",
+    "cost": 5,
+    "label": "Click Damage",
+    "description": "Increases damage per click",
+    "levels": 5,
+    "value": 1
+  },
+  {
+    "id": "click-slow",
+    "cost": 25,
+    "label": "Click Slow",
+    "description": "Slows enemies clicked",
+    "levels": 3,
+    "value": 1
+  }
+]

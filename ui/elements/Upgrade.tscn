@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/themes/kenney/kenney.tres" type="Theme" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="Upgrade" type="HBoxContainer"]
+margin_right = 170.0
+margin_bottom = 42.0
+theme = ExtResource( 1 )
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 42.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 42, 42 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Cost" type="Label" parent="."]
+margin_left = 47.0
+margin_top = 9.0
+margin_right = 67.0
+margin_bottom = 33.0
+text = "10"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 72.0
+margin_right = 218.638
+margin_bottom = 42.7363
+hint_tooltip = "Increases damage per click"
+text = "Click Damage"
+
+[node name="Current" type="Label" parent="."]
+margin_left = 223.0
+margin_top = 9.0
+margin_right = 247.0
+margin_bottom = 33.0
+text = "(0)"
