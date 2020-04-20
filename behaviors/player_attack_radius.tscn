@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/click-area.png" type="Texture" id=1]
+[ext_resource path="res://scripts/behaviors/player_attack_radius_display.gd" type="Script" id=2]
+
+[node name="player_attack_radius" type="Sprite"]
+position = Vector2( 421.114, 405.154 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
