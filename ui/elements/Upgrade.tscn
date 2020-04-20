@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/themes/kenney/kenney.tres" type="Theme" id=1]
 [ext_resource path="res://sprites/gold.png" type="Texture" id=2]
+[ext_resource path="res://scripts/behaviors/ui_click.gd" type="Script" id=3]
 
 [node name="Upgrade" type="HBoxContainer"]
 margin_right = 170.0
@@ -32,3 +33,4 @@ margin_right = 218.638
 margin_bottom = 42.7363
 hint_tooltip = "Increases damage per click"
 text = "Click Damage"
+script = ExtResource( 3 )

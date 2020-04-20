@@ -1,21 +1,22 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/themes/kenney/9-Slice/Ancient/tan_inlay.png" type="Texture" id=1]
 [ext_resource path="res://resources/themes/kenney/9-Slice/Ancient/tan_pressed.png" type="Texture" id=2]
 [ext_resource path="res://resources/themes/kenney/9-Slice/Ancient/tan.png" type="Texture" id=3]
+[ext_resource path="res://scripts/behaviors/ui_click.gd" type="Script" id=4]
 [ext_resource path="res://resources/themes/kenney/kenney.tres" type="Theme" id=5]
 [ext_resource path="res://resources/fonts/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://resources/fonts/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://resources/fonts/Fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://scripts/controllers/PlayerUpgradeController.gd" type="Script" id=9]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 7 )
 fallback/0 = ExtResource( 8 )
 fallback/1 = ExtResource( 6 )
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 44, 44 )
 margin_left = 1.7434
@@ -23,7 +24,7 @@ margin_right = 2.13083
 margin_top = 2.13083
 margin_bottom = 1.7434
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 4.19347
@@ -31,7 +32,7 @@ margin_right = 3.66929
 margin_top = 4.19347
 margin_bottom = 4.06243
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.48681
@@ -39,7 +40,7 @@ margin_right = 3.68052
 margin_top = 3.68052
 margin_bottom = 6.00506
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 7.33056
@@ -87,7 +88,7 @@ margin_bottom = 48.0
 margin_left = 289.0
 margin_right = 481.0
 margin_bottom = 48.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "Upgrades"
 
 [node name="UpgradeContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
@@ -111,13 +112,14 @@ margin_left = 285.0
 margin_right = 485.0
 margin_bottom = 38.1608
 rect_min_size = Vector2( 200, 0 )
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 custom_colors/font_color_disabled = Color( 0.34902, 0.34902, 0.34902, 1 )
 custom_colors/font_color = Color( 0.34902, 0.34902, 0.34902, 1 )
 custom_colors/font_color_hover = Color( 0.454902, 0.454902, 0.454902, 1 )
 custom_colors/font_color_pressed = Color( 0.34902, 0.34902, 0.34902, 1 )
 text = "Next Round"
+script = ExtResource( 4 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/NextRound" to="." method="_on_next_round_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://lib/redux/main.gd" type="Script" id=1]
 [ext_resource path="res://ui/PlayerHealth.tscn" type="PackedScene" id=2]
@@ -9,6 +9,28 @@
 [ext_resource path="res://sprites/background.png" type="Texture" id=7]
 [ext_resource path="res://resources/music/game-music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://resources/sfx/ui-select.wav" type="AudioStream" id=9]
+[ext_resource path="res://resources/sfx/game-over.wav" type="AudioStream" id=10]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends AudioStreamPlayer2D
+
+func _on_ui_click()->void:
+  play()
+
+func _ready():
+  actions.connect(\"ui_click\", self, \"_on_ui_click\")
+"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends AudioStreamPlayer2D
+
+func _on_game_complete()->void:
+  play()
+
+func _ready():
+  actions.connect(\"game_complete\", self, \"_on_game_complete\")
+  SpawnController.connect(\"spawn_controller_wave_complete\", self, \"_on_game_complete\")
+"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -45,6 +67,13 @@ bus = "Music"
 [node name="UISelectPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/MusicContainer/Control"]
 stream = ExtResource( 9 )
 bus = "UI"
+script = SubResource( 1 )
+
+[node name="GameOverPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/MusicContainer/Control"]
+stream = ExtResource( 10 )
+volume_db = -15.0
+bus = "UI"
+script = SubResource( 2 )
 
 [node name="Plant" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896.924, 297.419 )

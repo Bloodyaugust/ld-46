@@ -4,6 +4,7 @@ onready var types = get_node('/root/action_types')
 
 signal game_complete
 signal game_restart
+signal ui_click
 
 func game_add_enemies_killed(amount):
   return {
