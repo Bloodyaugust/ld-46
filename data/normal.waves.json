@@ -255,5 +255,128 @@
       "interval": 2,
       "location": "bottom"
     }
+  ],
+  [
+    {
+      "count": 12,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "top"
+    },
+    {
+      "count": 12,
+      "delay": 0,
+      "id": "snail",
+      "interval": 2.5,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 2.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 0.5,
+      "id": "clappap",
+      "interval": 0.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 1.5,
+      "id": "clappap",
+      "interval": 0.5,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 3,
+      "location": "middle"
+    },
+    {
+      "count": 20,
+      "delay": 20,
+      "id": "aphid",
+      "interval": 1,
+      "location": "middle"
+    },
+    {
+      "count": 12,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 3,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "grasshopper",
+      "interval": 6,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 1,
+      "delay": 0,
+      "id": "bird",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "top"
+    },
+    {
+      "count": 2,
+      "delay": 3,
+      "id": "bird",
+      "interval": 2,
+      "location": "middle"
+    },
+    {
+      "count": 25,
+      "delay": 0,
+      "id": "snail",
+      "interval": 0.25,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 4,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "bird",
+      "interval": 3,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 8,
+      "id": "grasshopper",
+      "interval": 6,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "clappap",
+      "interval": 2,
+      "location": "bottom"
+    }
   ]
 ]
