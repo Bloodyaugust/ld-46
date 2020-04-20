@@ -17,7 +17,7 @@ var _animations: Array = [
   "poke",
   "punch",
   "punch",
-  "punch"
+  "spray"
 ]
 var _damage_active: bool = false
 var _frames_active: int = 0
@@ -27,7 +27,7 @@ var _sprite_textures: Array = [
   load("res://sprites/attacks/poke.png"),
   load("res://sprites/attacks/punch.png"),
   load("res://sprites/attacks/punch.png"),
-  load("res://sprites/attacks/punch.png")
+  load("res://sprites/attacks/insecticide.png")
 ]
 
 func get_active()->bool:
@@ -40,9 +40,9 @@ func set_active()->void:
   _collision_shape.shape.radius = radius
   monitoring = true
 
-  _sprite.texture = _sprite_textures[damage]
+  _sprite.texture = _sprite_textures[damage - 1]
   _sprite.visible = true
-  _animation_player.play(_animations[damage])
+  _animation_player.play(_animations[damage - 1])
 
 func _set_damage_inactive()->void:
   _damage_active = false

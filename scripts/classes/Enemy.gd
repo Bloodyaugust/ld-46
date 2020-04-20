@@ -12,10 +12,19 @@ onready var _collision_shape = $"./Area2D/CollisionShape2D"
 onready var _damage_tween: Tween = $"./DamageTween"
 onready var _floating_text: PackedScene = preload("res://doodads/floating_text.tscn")
 onready var _health_bar: ProgressBar = $"./HealthBar"
+onready var _one_shot_sfx: PackedScene = preload("res://behaviors/one_shot_sfx.tscn")
 onready var _random_offset: float = rand_range(0, 5000)
+onready var _sfx: Dictionary = {
+  "aphid": preload("res://resources/sfx/bug-squish.wav"),
+  "bird": preload("res://resources/sfx/bird-squawk.wav"),
+  "clappap": preload("res://resources/sfx/bug-squish.wav"),
+  "grasshopper": preload("res://resources/sfx/bug-crunch.wav"),
+  "snail": preload("res://resources/sfx/bug-crunch.wav")
+}
 onready var _sprite = $"./Sprite"
 onready var _sprite_material = _sprite.material
 onready var _tree := get_tree()
+onready var _root := _tree.get_root()
 
 var _current_health: int
 var _damage: int
@@ -43,6 +52,16 @@ func slow(amount: int)->void:
 func get_class()->String:
   return "Enemy"
 
+func _die()->void:
+  var _new_one_shot = _one_shot_sfx.instance()
+
+  _new_one_shot.global_position = global_position
+  _new_one_shot.stream_resource = _sfx[id]
+
+  _root.add_child(_new_one_shot)
+
+  queue_free()
+
 func _on_animation_ended()->void:
   _last_position = global_position
   hop_position = Vector2(0, 0)
@@ -50,7 +69,7 @@ func _on_animation_ended()->void:
 func _on_area_entered(area)->void:
   if area.is_in_group("Plant"):
     store.dispatch(actions.player_damage(_damage))
-    queue_free()
+    _die()
 
 func _parse_data()->void:
   var _data: Dictionary = DataController.data["enemy"][id]
@@ -84,6 +103,9 @@ func _process(delta)->void:
       "fly":
         var _sin_scalar: float = sin((OS.get_system_time_msecs() + _random_offset) / 100)
 
+        if _animation_player.current_animation != "fly":
+          _animation_player.play("fly")
+
         position = position + (Vector2(_speed, _sin_scalar * 300) * delta) - (Vector2(_speed, _sin_scalar * 300) * delta * _slow_amount)
       "hop":
         if _animation_player.current_animation != "hop":
@@ -94,7 +116,9 @@ func _process(delta)->void:
 
         position = position + (Vector2(_sin_scalar * _speed, 0) * delta) - (Vector2(_sin_scalar * _speed, 0) * delta * _slow_amount)
         _sprite.scale.x = 0.75 + (_sin_scalar * 0.25)
-      _:
+      "basic":
+        if _animation_player.current_animation != "basic":
+          _animation_player.play("basic")
         position = position + (Vector2(_speed, 0) * delta) - (Vector2(_speed, 0) * delta * _slow_amount)
 
     _sprite_material.set_shader_param("amount", _damage_shader_param)
@@ -117,7 +141,7 @@ func _process(delta)->void:
 
     _tree.get_root().add_child(_new_floating_text)
 
-    queue_free()
+    _die()
 
 func _ready()->void:
   _parse_data()

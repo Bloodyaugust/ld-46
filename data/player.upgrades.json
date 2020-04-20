@@ -1,8 +1,8 @@
 [
   {
     "id": "click-damage",
-    "cost": 15,
-    "cost_scalar": 10,
+    "cost": 1,
+    "cost_scalar": 1,
     "label": "Click Damage",
     "description": "Increases damage per click",
     "levels": 5,

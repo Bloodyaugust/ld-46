@@ -1,24 +1,55 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://lib/redux/main.gd" type="Script" id=1]
 [ext_resource path="res://ui/PlayerHealth.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ui/PlayerGold.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/GoldAndSoundContainer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actors/Plant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/PlayerUpgrades.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/GameOver.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/background.png" type="Texture" id=7]
+[ext_resource path="res://resources/music/game-music.ogg" type="AudioStream" id=8]
+[ext_resource path="res://resources/sfx/ui-select.wav" type="AudioStream" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PlayerHealth" parent="CanvasLayer" instance=ExtResource( 2 )]
+[node name="GoldAndSoundContainer" parent="CanvasLayer" instance=ExtResource( 3 )]
 
-[node name="PlayerGold" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="PlayerHealth" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="PlayerUpgrades" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource( 6 )]
 
+[node name="MusicContainer" type="CenterContainer" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/MusicContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/MusicContainer/Control"]
+stream = ExtResource( 8 )
+autoplay = true
+bus = "Music"
+
+[node name="UISelectPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/MusicContainer/Control"]
+stream = ExtResource( 9 )
+bus = "UI"
+
 [node name="Plant" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896.924, 297.419 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 299.351 )
+scale = Vector2( 1, 0.783077 )
+texture = ExtResource( 7 )
