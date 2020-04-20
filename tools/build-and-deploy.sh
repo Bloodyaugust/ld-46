@@ -54,7 +54,7 @@ cd ../../
 echo "ZIPPING FOR LINUX"
 echo "-----------------------------"
 cd build/linux/
-zip -r defend-your-plant-win-alpha.zip defend-your-plant.x86_64 defend-your-plant.pck
+zip -r defend-your-plant-linux-alpha.zip defend-your-plant.x86_64 defend-your-plant.pck
 rm -r defend-your-plant.x86_64 defend-your-plant.pck
 cd ../../
 
