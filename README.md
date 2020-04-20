@@ -1,11 +1,5 @@
-# godot-template
+# Defend Your Plant!
 
-A template for Godot projects.
+It's the early 2000's, and you've got time to kill in the computer lab. Time to defend your plant.
 
-## Dockerfile
-
-To build:
-`docker build .circleci/images/godot/ -t greysonr/godot_butler:<version number>`
-
-To push:
-`docker push greysonr/godot_butler:<tag name>`
+Mouse _strongly_ recommended.
