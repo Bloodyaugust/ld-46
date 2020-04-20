@@ -16,5 +16,8 @@ func _ready()->void:
   store.subscribe(self, "_on_store_changed")
 
 func _update_screen()->void:
+  if _player_health < 0:
+    _player_health = 0
+
   _player_healthbar.value = _player_health
   _player_health_label.text = "{_player_health}/100".format({"_player_health": _player_health})

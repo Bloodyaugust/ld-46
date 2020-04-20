@@ -32,10 +32,17 @@ func _process(delta)->void:
       _waiting_for_next_wave = false
       print("Wave complete")
 
-      if _current_wave == DataController.data["waves"]["normal"].size() || store.state()["player"]["health"] <= 0:
+      if _current_wave == DataController.data["waves"]["normal"].size():
         actions.emit_signal("game_complete")
       else:
         emit_signal("spawn_controller_wave_complete")
+
+    if store.state()["player"]["health"] <= 0:
+      actions.emit_signal("game_complete")
+      print("Player lost")
+
+      for _enemy in _enemies:
+        _enemy.queue_free()
 
 func _ready()->void:
   _spawn_points["top"] = Vector2(-100, 150)
