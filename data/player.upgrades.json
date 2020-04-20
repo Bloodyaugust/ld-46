@@ -38,8 +38,8 @@
   },
   {
     "id": "enemy-kill-bonus-gold",
-    "cost": 150,
-    "cost_scalar": 75,
+    "cost": 75,
+    "cost_scalar": 50,
     "label": "Bonus Gold",
     "description": "Get more gold from killing bugs",
     "levels": 3,
