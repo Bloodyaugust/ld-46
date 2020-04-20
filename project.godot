@@ -38,9 +38,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LD 46"
+config/name="Defend Your Plant!"
+config/description="It’s the early 2000’s, and you’ve got time to kill in the computer lab. Time to defend your plant."
 run/main_scene="res://scenes/main.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://media/thumbnail.png"
+config/icon="res://sprites/enemies/aphid.png"
+config/macos_native_icon="res://media/defend-your-plant.icns"
+config/windows_native_icon="res://media/defend-your-plant.ico"
 
 [autoload]
 
@@ -52,6 +56,10 @@ actions="*res://lib/redux/actions.gd"
 reducers="*res://lib/redux/reducers.gd"
 DataController="*res://scripts/controllers/DataController.gd"
 SpawnController="*res://scripts/controllers/SpawnController.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
