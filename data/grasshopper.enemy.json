@@ -1,12 +1,12 @@
 {
   "id": "grasshopper",
   "damage": 10,
-  "health": 20,
+  "health": 8,
   "movement": "hop",
   "size": [
     24,
     24
   ],
-  "speed": 200,
+  "speed": 250,
   "value": 3
 }

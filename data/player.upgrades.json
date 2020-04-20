@@ -1,8 +1,8 @@
 [
   {
     "id": "click-damage",
-    "cost": 1,
-    "cost_scalar": 1,
+    "cost": 15,
+    "cost_scalar": 10,
     "label": "Click Damage",
     "description": "Increases damage per click",
     "levels": 5,
@@ -22,7 +22,7 @@
     "cost": 40,
     "cost_scalar": 2,
     "label": "Click Radius",
-    "description": "Increases radius of click",
+    "description": "Increases radius of click damage",
     "levels": 3,
     "requires": "click-piercing",
     "value": 20

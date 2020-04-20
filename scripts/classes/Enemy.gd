@@ -73,12 +73,17 @@ func _on_area_entered(area)->void:
 
 func _parse_data()->void:
   var _data: Dictionary = DataController.data["enemy"][id]
+  var _hop_animation: Animation = _animation_player.get_animation("hop")
 #  Eat the data into a first party data structure
   _damage = _data["damage"]
   _health = _data["health"]
   _movement_type = _data["movement"]
-  _speed = _data["speed"]
   _value = _data["value"]
+
+  _speed = _data["speed"]
+  if _movement_type == "hop":
+    _hop_animation.track_set_key_value(1, 1, [_speed, -0.25, 0, 0.25, 0])
+    print("Animation tracks: " + str(_hop_animation.track_get_key_value(1, 1)))
 
   _sprite.texture = load("res://sprites/enemies/{id}.png".format({"id": id}))
   _collision_shape.shape.extents = Vector2(_data["size"][0], _data["size"][1])

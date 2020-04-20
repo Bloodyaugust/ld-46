@@ -42,6 +42,7 @@ func player(state, action):
       "gold_earned": 0,
       "health": 100,
       "upgrades": {}
+      # "upgrades": {"click-damage": 2, "click-piercing": 1}
     }
     return next_state
   if action['type'] == action_types.PLAYER_SET_GOLD:
