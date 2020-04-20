@@ -139,5 +139,56 @@
       "interval": 3.5,
       "location": "bottom"
     }
+  ],
+  [
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 4.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 0.5,
+      "id": "snail",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 7,
+      "delay": 2,
+      "id": "aphid",
+      "interval": 1,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 10,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "bottom"
+    },
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "bottom"
+    },
+    {
+      "count": 8,
+      "delay": 6,
+      "id": "grasshopper",
+      "interval": 2.5,
+      "location": "bottom"
+    }
   ]
 ]

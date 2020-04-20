@@ -83,7 +83,6 @@ func _parse_data()->void:
   _speed = _data["speed"]
   if _movement_type == "hop":
     _hop_animation.track_set_key_value(1, 1, [_speed, -0.25, 0, 0.25, 0])
-    print("Animation tracks: " + str(_hop_animation.track_get_key_value(1, 1)))
 
   _sprite.texture = load("res://sprites/enemies/{id}.png".format({"id": id}))
   _collision_shape.shape.extents = Vector2(_data["size"][0], _data["size"][1])
@@ -99,7 +98,7 @@ func _process(delta)->void:
       _slow_duration_left -= delta
       
       if _slow_amount == 0:
-        _slow_amount = store.state()["player"]["upgrades"].get("click-slow", 0) * 0.1
+        _slow_amount = store.state()["player"]["upgrades"].get("click-slow", 0) * 0.35
     else:
       _slow_duration_left = 0
       _slow_amount = 0
@@ -114,6 +113,7 @@ func _process(delta)->void:
         position = position + (Vector2(_speed, _sin_scalar * 300) * delta) - (Vector2(_speed, _sin_scalar * 300) * delta * _slow_amount)
       "hop":
         if _animation_player.current_animation != "hop":
+          _animation_player.get_animation("hop").track_set_key_value(1, 1, [_speed - (_speed * _slow_amount), -0.25, 0, 0.25, 0])
           _animation_player.play("hop")
         global_position = _last_position + hop_position
       "squish":
