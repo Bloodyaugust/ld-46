@@ -1,0 +1,12 @@
+{
+  "id": "clappap",
+  "damage": 15,
+  "health": 50,
+  "movement": "squish",
+  "size": [
+    32,
+    16
+  ],
+  "speed": 100,
+  "value": 4
+}

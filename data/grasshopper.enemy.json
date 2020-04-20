@@ -1,0 +1,12 @@
+{
+  "id": "grasshopper",
+  "damage": 10,
+  "health": 20,
+  "movement": "hop",
+  "size": [
+    24,
+    24
+  ],
+  "speed": 200,
+  "value": 3
+}

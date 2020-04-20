@@ -4,7 +4,9 @@ class_name Enemy
 const SLOW_DURATION_BASE: float = 1.0
 
 export var id: String
+export var hop_position: Vector2 = Vector2(0, 0)
 
+onready var _animation_player: AnimationPlayer = $"./AnimationPlayer"
 onready var _area2d = $"./Area2D"
 onready var _collision_shape = $"./Area2D/CollisionShape2D"
 onready var _damage_tween: Tween = $"./DamageTween"
@@ -19,6 +21,7 @@ var _current_health: int
 var _damage: int
 var _damage_shader_param: float = 0
 var _health: int
+var _last_position: Vector2
 var _movement_type: String
 var _slow_amount: float
 var _slow_duration_left: float
@@ -39,6 +42,10 @@ func slow(amount: int)->void:
 
 func get_class()->String:
   return "Enemy"
+
+func _on_animation_ended()->void:
+  _last_position = global_position
+  hop_position = Vector2(0, 0)
 
 func _on_area_entered(area)->void:
   if area.is_in_group("Plant"):
@@ -74,6 +81,14 @@ func _process(delta)->void:
       _slow_amount = 0
 
     match _movement_type:
+      "fly":
+        var _sin_scalar: float = sin((OS.get_system_time_msecs() + _random_offset) / 100)
+
+        position = position + (Vector2(_speed, _sin_scalar * 300) * delta) - (Vector2(_speed, _sin_scalar * 300) * delta * _slow_amount)
+      "hop":
+        if _animation_player.current_animation != "hop":
+          _animation_player.play("hop")
+        global_position = _last_position + hop_position
       "squish":
         var _sin_scalar: float = (sin((OS.get_system_time_msecs() + _random_offset) / 200.0) + 1.0) / 2.0
 
@@ -108,5 +123,6 @@ func _ready()->void:
   _parse_data()
 
   _current_health = _health
+  _last_position = global_position
 
   _area2d.connect("area_entered", self, "_on_area_entered")
