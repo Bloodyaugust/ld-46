@@ -63,8 +63,8 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="GoldEarnedContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 226.0
-margin_right = 372.0
+margin_left = 118.0
+margin_right = 264.0
 margin_bottom = 32.0
 custom_constants/separation = 10
 
@@ -81,11 +81,18 @@ margin_bottom = 28.0
 text = "earned: 50"
 
 [node name="EnemiesKilledLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 392.0
+margin_left = 284.0
 margin_top = 4.0
-margin_right = 544.0
+margin_right = 436.0
 margin_bottom = 28.0
 text = "Bugs killed: 100"
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 456.0
+margin_top = 4.0
+margin_right = 652.0
+margin_bottom = 28.0
+text = "Score: 10000000000"
 
 [node name="RestartContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 236.0
