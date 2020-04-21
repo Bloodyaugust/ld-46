@@ -4,7 +4,8 @@ onready var _enemies_killed_label: Label = $"./MarginContainer/VBoxContainer/HBo
 onready var _gold_earned_label: Label = $"./MarginContainer/VBoxContainer/HBoxContainer/GoldEarnedContainer/GoldEarnedLabel"
 onready var _position_tween: Tween = $"./PositionTween"
 onready var _resolution_label: Label = $"./MarginContainer/VBoxContainer/ResolutionLabel"
-onready var _restart_button: Button = $"./MarginContainer/VBoxContainer/CenterContainer/Button"
+onready var _restart_easy_button: Button = $"./MarginContainer/VBoxContainer/RestartContainer/Easy"
+onready var _restart_normal_button: Button = $"./MarginContainer/VBoxContainer/RestartContainer/Normal"
 
 func _hide():
   _position_tween.interpolate_property(self, "rect_position", Vector2(100, 100), Vector2(100, 1000), 0.25, Tween.TRANS_CUBIC, Tween.EASE_OUT)
@@ -15,12 +16,14 @@ func _hide():
 func _on_game_complete()->void:
   _show()
 
-func _on_restart_button_pressed()->void:
+func _on_restart_button_pressed(difficulty: String)->void:
+  SpawnController.difficulty = difficulty
   actions.emit_signal("game_restart")
   _hide()
 
 func _ready()->void:
-  _restart_button.connect("pressed", self, "_on_restart_button_pressed")
+  _restart_easy_button.connect("pressed", self, "_on_restart_button_pressed", ["easy"])
+  _restart_normal_button.connect("pressed", self, "_on_restart_button_pressed", ["normal"])
   actions.connect("game_complete", self, "_on_game_complete")
 
 func _show()->void:

@@ -1,0 +1,503 @@
+[
+  [
+    {
+      "count": 4,
+      "delay": 12,
+      "id": "aphid",
+      "interval": 3,
+      "location": "top"
+    },
+    {
+      "count": 4,
+      "delay": 0,
+      "id": "aphid",
+      "interval": 3,
+      "location": "middle"
+    },
+    {
+      "count": 4,
+      "delay": 6,
+      "id": "aphid",
+      "interval": 3,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 5,
+      "delay": 8,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "top"
+    },
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "aphid",
+      "interval": 2.5,
+      "location": "middle"
+    },
+    {
+      "count": 7,
+      "delay": 14,
+      "id": "aphid",
+      "interval": 3,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 7,
+      "delay": 2,
+      "id": "aphid",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 10,
+      "delay": 0,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 5,
+      "delay": 2.5,
+      "id": "snail",
+      "interval": 3,
+      "location": "middle"
+    },
+    {
+      "count": 5,
+      "delay": 12,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 5,
+      "delay": 0.5,
+      "id": "snail",
+      "interval": 4,
+      "location": "bottom"
+    },
+    {
+      "count": 5,
+      "delay": 15,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 5,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 4.5,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 0.5,
+      "id": "snail",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 7,
+      "delay": 2,
+      "id": "aphid",
+      "interval": 1,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 10,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 4,
+      "id": "grasshopper",
+      "interval": 3.5,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 4.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 0.5,
+      "id": "snail",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 7,
+      "delay": 2,
+      "id": "aphid",
+      "interval": 1,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 10,
+      "id": "aphid",
+      "interval": 1.5,
+      "location": "bottom"
+    },
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "bottom"
+    },
+    {
+      "count": 8,
+      "delay": 6,
+      "id": "grasshopper",
+      "interval": 2.5,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 2.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 0.5,
+      "id": "clappap",
+      "interval": 5,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 0,
+      "id": "snail",
+      "interval": 0.5,
+      "location": "middle"
+    },
+    {
+      "count": 4,
+      "delay": 30,
+      "id": "grasshopper",
+      "interval": 5,
+      "location": "middle"
+    },
+    {
+      "count": 6,
+      "delay": 0,
+      "id": "snail",
+      "interval": 1,
+      "location": "bottom"
+    },
+    {
+      "count": 6,
+      "delay": 4,
+      "id": "clappap",
+      "interval": 6,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "grasshopper",
+      "interval": 6,
+      "location": "bottom"
+    },
+    {
+      "count": 5,
+      "delay": 20,
+      "id": "grasshopper",
+      "interval": 2,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 12,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "top"
+    },
+    {
+      "count": 12,
+      "delay": 0,
+      "id": "snail",
+      "interval": 2.5,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 2.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 0.5,
+      "id": "clappap",
+      "interval": 0.5,
+      "location": "middle"
+    },
+    {
+      "count": 8,
+      "delay": 1.5,
+      "id": "clappap",
+      "interval": 0.5,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 0,
+      "id": "grasshopper",
+      "interval": 3,
+      "location": "middle"
+    },
+    {
+      "count": 20,
+      "delay": 20,
+      "id": "aphid",
+      "interval": 1,
+      "location": "middle"
+    },
+    {
+      "count": 12,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 3,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "grasshopper",
+      "interval": 6,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 1,
+      "delay": 0,
+      "id": "bird",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "top"
+    },
+    {
+      "count": 2,
+      "delay": 3,
+      "id": "bird",
+      "interval": 2,
+      "location": "middle"
+    },
+    {
+      "count": 25,
+      "delay": 0,
+      "id": "snail",
+      "interval": 0.25,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 4,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "bird",
+      "interval": 3,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 3,
+      "id": "grasshopper",
+      "interval": 4,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "clappap",
+      "interval": 2,
+      "location": "bottom"
+    }
+  ],
+  [
+    {
+      "count": 1,
+      "delay": 0,
+      "id": "bird",
+      "interval": 1,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 3,
+      "id": "bird",
+      "interval": 0.75,
+      "location": "top"
+    },
+    {
+      "count": 3,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "top"
+    },
+    {
+      "count": 25,
+      "delay": 0,
+      "id": "clappap",
+      "interval": 0.25,
+      "location": "top"
+    },
+    {
+      "count": 25,
+      "delay": 10,
+      "id": "clappap",
+      "interval": 0.5,
+      "location": "top"
+    },
+    {
+      "count": 25,
+      "delay": 20,
+      "id": "clappap",
+      "interval": 0.5,
+      "location": "top"
+    },
+    {
+      "count": 10,
+      "delay": 15,
+      "id": "grasshopper",
+      "interval": 2,
+      "location": "top"
+    },
+    {
+      "count": 2,
+      "delay": 3,
+      "id": "bird",
+      "interval": 2,
+      "location": "middle"
+    },
+    {
+      "count": 4,
+      "delay": 8,
+      "id": "bird",
+      "interval": 2,
+      "location": "middle"
+    },
+    {
+      "count": 25,
+      "delay": 0,
+      "id": "snail",
+      "interval": 0.25,
+      "location": "middle"
+    },
+    {
+      "count": 30,
+      "delay": 10,
+      "id": "aphid",
+      "interval": 0.2,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 4,
+      "id": "clappap",
+      "interval": 1.5,
+      "location": "middle"
+    },
+    {
+      "count": 10,
+      "delay": 20,
+      "id": "grasshopper",
+      "interval": 2,
+      "location": "middle"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "bird",
+      "interval": 3,
+      "location": "bottom"
+    },
+    {
+      "count": 5,
+      "delay": 15,
+      "id": "bird",
+      "interval": 1.5,
+      "location": "bottom"
+    },
+    {
+      "count": 10,
+      "delay": 8,
+      "id": "grasshopper",
+      "interval": 2,
+      "location": "bottom"
+    },
+    {
+      "count": 30,
+      "delay": 10,
+      "id": "aphid",
+      "interval": 0.2,
+      "location": "bottom"
+    },
+    {
+      "count": 3,
+      "delay": 6,
+      "id": "clappap",
+      "interval": 2,
+      "location": "bottom"
+    }
+  ]
+]

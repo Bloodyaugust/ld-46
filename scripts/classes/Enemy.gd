@@ -135,6 +135,8 @@ func _process(delta)->void:
     var _new_floating_text = _floating_text.instance()
     var _gold_added = _value + store.state()["player"]["upgrades"].get("enemy-kill-bonus-gold", 0)
 
+    _gold_added += 2 if SpawnController.difficulty == "easy" else 0
+
     store.dispatch(actions.player_add_gold(_gold_added))
     store.dispatch(actions.game_add_enemies_killed(1))
 

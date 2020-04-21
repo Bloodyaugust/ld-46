@@ -3,6 +3,8 @@ extends Node
 signal spawn_controller_spawn_wave
 signal spawn_controller_wave_complete
 
+export var difficulty: String = "normal"
+
 onready var _tree := get_tree()
 onready var _root := _tree.get_root()
 
@@ -38,7 +40,7 @@ func _process(delta)->void:
       _waiting_for_next_wave = false
       print("Wave complete")
 
-      if _current_wave == DataController.data["waves"]["normal"].size():
+      if _current_wave == DataController.data["waves"][difficulty].size():
         actions.emit_signal("game_complete")
       else:
         emit_signal("spawn_controller_wave_complete")
@@ -69,7 +71,7 @@ func _ready()->void:
 
 func _spawn_wave()->void:
   var _new_spawner: Spawner
-  var _wave: Array = DataController.data["waves"]["normal"][_current_wave]
+  var _wave: Array = DataController.data["waves"][difficulty][_current_wave]
 
   for _spawn_configuration in _wave:
     _new_spawner = Spawner.new()

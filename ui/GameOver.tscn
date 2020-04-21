@@ -87,15 +87,25 @@ margin_right = 544.0
 margin_bottom = 28.0
 text = "Bugs killed: 100"
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+[node name="RestartContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 236.0
 margin_right = 770.0
-margin_bottom = 278.736
+margin_bottom = 278.0
+custom_constants/separation = 20
+alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer"]
-margin_left = 235.0
-margin_right = 535.0
+[node name="Easy" type="Button" parent="MarginContainer/VBoxContainer/RestartContainer"]
+margin_left = 75.0
+margin_right = 375.0
 margin_bottom = 42.7363
 rect_min_size = Vector2( 300, 0 )
-text = "Restart"
+text = "Restart (Easy)"
+script = ExtResource( 7 )
+
+[node name="Normal" type="Button" parent="MarginContainer/VBoxContainer/RestartContainer"]
+margin_left = 395.0
+margin_right = 695.0
+margin_bottom = 42.7363
+rect_min_size = Vector2( 300, 0 )
+text = "Restart (Normal)"
 script = ExtResource( 7 )
