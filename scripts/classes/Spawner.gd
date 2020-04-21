@@ -50,6 +50,7 @@ func _process(delta)->void:
       _spawning = true
 
 func _ready()->void:
+  add_to_group("Spawners")
   _parse_configuration()
 
 func _spawn()->void:

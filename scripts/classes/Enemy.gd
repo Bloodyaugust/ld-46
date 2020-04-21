@@ -113,7 +113,6 @@ func _process(delta)->void:
         position = position + (Vector2(_speed, _sin_scalar * 300) * delta) - (Vector2(_speed, _sin_scalar * 300) * delta * _slow_amount)
       "hop":
         if _animation_player.current_animation != "hop":
-          _animation_player.get_animation("hop").track_set_key_value(1, 1, [_speed - (_speed * _slow_amount), -0.25, 0, 0.25, 0])
           _animation_player.play("hop")
         global_position = _last_position + hop_position
       "squish":

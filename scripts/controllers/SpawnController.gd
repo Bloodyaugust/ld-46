@@ -7,12 +7,18 @@ onready var _tree := get_tree()
 onready var _root := _tree.get_root()
 
 var _current_wave: int = 0
+var _game_complete: bool = false
 var _spawners_remaining: int = 0
 var _spawn_points: Dictionary = {}
 var _waiting_for_next_wave: bool = false
 
+func _on_game_complete()->void:
+  _game_complete = true
+
 func _on_game_restart()->void:
   _current_wave = 0
+  _game_complete = false
+  _spawners_remaining = 0
   _spawn_wave()
 
 func _on_spawner_spawning_completed()->void:
@@ -37,12 +43,18 @@ func _process(delta)->void:
       else:
         emit_signal("spawn_controller_wave_complete")
 
-    if store.state()["player"]["health"] <= 0:
-      actions.emit_signal("game_complete")
-      print("Player lost")
+  if store.state()["player"]["health"] <= 0 && !_game_complete:
+    var _enemies = _tree.get_nodes_in_group("Enemy")
+    var _spawners = _tree.get_nodes_in_group("Spawners")
 
-      for _enemy in _enemies:
-        _enemy.queue_free()
+    _waiting_for_next_wave = false
+    actions.emit_signal("game_complete")
+    print("Player lost")
+
+    for _enemy in _enemies:
+      _enemy.queue_free()
+    for _spawner in _spawners:
+      _spawner.queue_free()
 
 func _ready()->void:
   _spawn_points["top"] = Vector2(-100, 150)
@@ -50,6 +62,7 @@ func _ready()->void:
   _spawn_points["bottom"] = Vector2(-100, 450)
 
   connect("spawn_controller_spawn_wave", self, "_spawn_wave")
+  actions.connect("game_complete", self, "_on_game_complete")
   actions.connect("game_restart", self, "_on_game_restart")
 
   call_deferred("_spawn_wave")
